@@ -78,9 +78,5 @@ Explores the fundamentals of networking in Java. Covers creating client-server a
 ### Chapter 18: Dealing with Concurrency Issues
 Learn about concurrency in Java and how to handle multi-threaded programming. Covers thread synchronization, thread pools, and the challenges of concurrent programming.
 
----
 
-This repository was created for educational purposes. The solutions provided here are based on the exercises in "Head First Java, 3rd Edition".
-
-Happy coding and enjoy your journey through Head First Java!
 

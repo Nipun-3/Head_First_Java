@@ -1,0 +1,64 @@
+out of the provided object types, the following are serializable:
+
+String
+Date
+JFrame
+Integer
+The following are not serializable:
+
+Object (base class, depends on subclass)
+File    // doesn't represent content but path,directory
+OutputStream
+System
+
+xxxxxxxxxxxxx-----------------------------xxxxxxxxxxxxxxxx
+
+FileReader fileReader = new FileReader();
+BufferedReader reader = new BufferedReader(fileReader);
+
+// will not compile as FileReader don't have any arg
+
+
+
+FileOutputStream f = new FileOutputStream("Foo.ser");
+ObjectOutputStream os = new ObjectOutputStream(f);
+
+//will compile
+
+
+
+BufferedReader reader = new BufferedReader(new FileReader(file));
+String line;
+while ((line = reader.readLine()) != null) {
+    makeCard(line);
+}
+
+//will compile
+
+
+
+FileOutputStream f = new FileOutputStream("Game.ser");
+ObjectInputStream is = new ObjectInputStream(f);  // error in this line
+GameCharacter oneAgain = (GameCharacter) is.readobject(); // readObject (O capital)
+
+//will not compile
+
+xxxxxxxxxxxxxxxxxxxxxx----------------------------------xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+1 F
+2 F
+3 T
+4 F
+5 T
+6 F
+7 T/F
+8 F
+9 T
+10 T
+11 T
+12 T
+13 F
+14 F
+15 T
+16 T
+17 F

@@ -1,0 +1,36 @@
+private void takeDogs (List<Dog> dogs) { }
+
+private void takeAnimals (List<Animal> animals) { }
+
+private void takeSomeAnimals (List <? extends Animal> animals) { }
+
+private void takeObjects (ArrayList<Object> objects) { }
+
+
+
+takeAnimals(new ArrayList<Animal>());   // C
+
+takeDogs(new ArrayList<Animal>());      // NC : needs List<Dog>
+
+takeAnimals(new ArrayList<Dog>()) ;    //NC   :  needs List<Animal>
+
+takeDogs(new ArrayList<>()) ;          //C
+
+List<Dog> dogs = new ArrayList<>() ;
+takeDogs (dogs) ;                          // C
+
+takeSomeAnimals(new ArrayList<Dog>()) ;  //C
+
+takeSomeAnimals(new ArrayList<>());     //C
+
+takeSomeAnimals(new ArrayList<Animal>()) ;      //C
+
+List<Animal> animals = new ArrayList<>() ;      //C
+takeSomeAnimals (animals) ;
+
+List<Object> objects = new ArrayList<>() ;
+takeObjects (objects) ;                       //NC  :  needs ArrayList not List
+
+takeObjects(new ArrayList<Dog>()) ;        //NC     : needs ArrayList<Object>
+
+takeObjects(new ArrayList<Object>()) ;       //C

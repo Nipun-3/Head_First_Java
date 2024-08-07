@@ -1,0 +1,3 @@
+songList.sort((one,two) -> one.bpm - two.bpm); //   sorting based on bpm
+
+songList.sort((one,two) -> two.title.compareTo(one.title))      // sorting based on desc title
